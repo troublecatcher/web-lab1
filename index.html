@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hidden">
+        <img id="pic" src="mountains.jpeg" alt="Whoopsies...">
+        <div id="namedate">
+            <p id="username"></p>
+            <p id="date"></p>
+        </div>
+    </div>
+    <div id="container">
+        <p id="namebox"></p>
+        <div>
+            <p>
+                JavaScript - язык программирования, который позволяет вам создать динамически обновляемый контент, управляет мультимедиа, анимирует изображения, впрочем, делает всё, что угодно. Окей, не все, что угодно, но всё равно, это удивительно, что можно достичь с помощью нескольких строк JavaScript-кода. Вот некоторые из его недостатков.
+            </p>
+            <p>
+                <li>
+                    Безальтернативность. Формально это не совсем так, но по факту если ты занимаешься фронтендом в вебе, ты обязан знать JS, в отличие от бэкенда, где может быть выбор.
+                </li>
+                <li>
+                    Трудности при переходе с других языков, особенно с языков с сильной статической типизацией (например, с Java). Конечно, это относится не только к JS, но JS сейчас самый популярный, поэтому с ним сталкиваются чаще.
+                </li>
+                <li>
+                    Путаница, вызванная обратной совместимостью. JS имеет довольно долгую историю, в течение которой разработчики сохраняют полную обратную совместимость (старый код должен одинаково работать на новых интерпретаторах). Это вызывает разные неочевидные особенности. Например, какие-то (старые) методы массивов мутируют массив, а другие (новые) — возвращают его копию.
+                </li>
+            </p>
+        </div>
+        <div class="apps">
+            <input type="text" id="name" placeholder="Представьтесь">
+            <button onclick="greet();">Поприветствовать =)</button>
+        </div>
+        <div class="apps">
+            <input type="number" id="a" placeholder="Основание треугольника">
+            <input type="number" id="h" placeholder="Высота треугольника">
+            <button onclick="calc();">Посчитать площадь треугольника</button>
+        </div>
+        <div class="apps">
+            <input type="text" id="str1" placeholder="Введите строку 1">
+            <input type="text" id="str2" placeholder="Введите строку 2">
+            <button onclick="compare();">Сравнить длину строк</button>
+        </div>
+        <div class="apps">
+            <input type="text" id="array" placeholder="Введите массив чисел через запятую">
+            <button onclick="minmax();">Найти минимальное и максимальное значение</button>
+        </div>
+        <div class="apps">
+            <input type="text" id="timer" value="0">
+            <button onclick="start();">Начать отсчет</button>
+            <button onclick="stop();">Остановить отсчет</button>
+            <button onclick="look();">Посмотреть сколько прошло времени</button>
+        </div>
+        <div><h3>Тестик</h3><hr>
+            <form>
+                <pre>
+(function(){
+    return typeof arguments;
+  })();
+                </pre>
+                <input class="correct" id="1st1" name="1st" type="radio"><label for="1st1">"object"</label>
+                <input id="1st2" name="1st" type="radio"><label for="1st2">"array"</label>
+                <input id="1st3" name="1st" type="radio"><label for="1st3">"arguments"</label>
+                <input id="1st4" name="1st" type="radio"><label for="1st4">"undefined"</label>
+            </form><hr>
+            <v>Как правильно писать IF конструкцию в JavaScript?
+                <br>
+                <input id="2nd1" name="2nd" type="radio"><label for="2nd1">if i==5 then</label>
+                <input id="2nd2" name="2nd" type="radio"><label for="2nd2">if i=5</label>
+                <input id="2nd3" name="2nd" type="radio"><label for="2nd3">if i=5 then</label>
+                <input class="correct" id="2nd4" name="2nd" type="radio"><label for="2nd4">if (i==5)</label>
+            </form><hr>
+            <form>
+                <pre>
+var f = function g(){ return 23; };
+typeof g();
+                </pre>
+                <input id="3rd1" name="3rd" type="radio"><label for="3rd1">"number"</label>
+                <input id="3rd2" name="3rd" type="radio"><label for="3rd2">"undefined"</label>
+                <input id="3rd3" name="3rd" type="radio"><label for="3rd3">"function"</label>
+                <input class="correct" id="3rd4" name="3rd" type="radio"><label for="3rd4">Error</label>
+            </form><hr>
+            <form>
+                <pre>
+(function(x){
+    delete x;
+    return x;
+})(1);
+                </pre>
+                <input class="correct" id="4th1" name="4th" type="radio"><label for="4th1">1</label>
+                <input id="4th2" name="4th" type="radio"><label for="4th2">null</label>
+                <input id="4th3" name="4th" type="radio"><label for="4th3">undefined</label>
+                <input id="4th4" name="4th" type="radio"><label for="4th4">Error</label>
+            </form><hr>
+            <form>
+                <pre>
+var y = 1, x = y = typeof x;
+x;
+                </pre>
+                <input id="5th1" name="5th" type="radio"><label for="5th1">1</label>
+                <input id="5th2" name="5th" type="radio"><label for="5th2">"number"</label>
+                <input id="5th3" name="5th" type="radio"><label for="5th3">undefined</label>
+                <input class="correct" id="5th4" name="5th" type="radio"><label for="5th4">"undefined"</label>
+            </form><hr>
+            <form>
+                <pre>
+(function f(f){
+    return typeof f();
+})(function(){ return 1; });
+                </pre>
+                <input class="correct" id="6th1" name="6th" type="radio"><label for="6th1">"number"</label>
+                <input id="6th2" name="6th" type="radio"><label for="6th2">"undefined"</label>
+                <input id="6th3" name="6th" type="radio"><label for="6th3">"function"</label>
+                <input id="6th4" name="6th" type="radio"><label for="6th4">Error</label>
+            </form><hr>
+            <form>
+                <pre>
+var foo = {
+    bar: function() { return this.baz; },
+    baz: 1
+};
+(function(){
+    return typeof arguments[0]();
+})(foo.bar);
+                </pre>
+                <input class="correct" id="7th1" name="7th" type="radio"><label for="7th1">"undefined"</label>
+                <input id="7th2" name="7th" type="radio"><label for="7th2">"object"</label>
+                <input id="7th3" name="7th" type="radio"><label for="7th3">"number"</label>
+                <input id="7th4" name="7th" type="radio"><label for="7th4">"function"</label>
+            </form><hr>
+            <form>
+                <pre>
+var f = (function f(){ return "1"; }, function g(){ return 2; })();
+typeof f;
+                </pre>
+                <input id="8th1" name="8th" type="radio"><label for="8th1">"string"</label>
+                <input class="correct" id="8th2" name="8th" type="radio"><label for="8th2">"number"</label>
+                <input id="8th3" name="8th" type="radio"><label for="8th3">"function"</label>
+                <input id="8th4" name="8th" type="radio"><label for="8th4">"undefined"</label>
+            </form><hr>
+            <form>
+                <pre>
+var x = 1;
+if (function f(){}) {
+  x += typeof f;
+}
+x;
+                </pre>
+                <input id="9th1" name="9th" type="radio"><label for="9th1">1</label>
+                <input id="9th2" name="9th" type="radio"><label for="9th2">"1function"</label>
+                <input class="correct" id="9th3" name="9th" type="radio"><label for="9th3">"1undefined"</label>
+                <input id="9th4" name="9th" type="radio"><label for="9th4">NaN</label>
+            </form><hr>
+            <form>
+                <pre>
+var x = [typeof x, typeof y][1];
+typeof typeof x;
+                </pre>
+                <input id="10th1" name="10th" type="radio"><label for="10th1">"number"</label>
+                <input class="correct" id="10th2" name="10th" type="radio"><label for="10th2">"string"</label>
+                <input id="10th3" name="10th" type="radio"><label for="10th3">"undefined"</label>
+                <input id="10th4" name="10th" type="radio"><label for="10th4">"object"</label>
+            </form>
+        </div>
+        <div class="apps">
+            <button onclick="check();">Проверить</button>
+        </div>
+        <div class="apps">
+            <button onclick="beautify();">Заставка</button>
+        </div>
+        <div class="apps">
+            <button onclick="openModal();">Меню</button>
+        </div>
+    </div>
+    <div id="menu">
+        <p>
+Для решения задач я старался использовать самый стандартный набор функций и методов ванильного JS.
+Искал элементы в основном по ID, функционал кнопок внедрял через атрибут onclick с привязкой к соответствующей функции.
+Выводил нужную информацию через alert, потому что считаю, что это самый быстрый и наглядный способ отладки.
+Обращался к методам планирования: setInterval, clearInterval, setTimeout.
+Цикл чаще всего использовал вида forEach, он удобный и компактный.
+Интерактивное взаимодействие с CSS реализовывал при помощи изменения свойств style у элементов, которые необходимо было поменять.
+При выполнении заданий с заставкой и всплывающим окном прибегнул к методу addEventListener, чтобы иметь возможность вернуться к основной странице при клике в любом месте.
+        </p>
+        <button onclick="wtf()">Функция</button>
+    </div>
+    <div id="overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
