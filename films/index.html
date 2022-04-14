@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div id="container">
+    <div id="form">
+        <form name="filmForm">
+            <label for="name">Название <input id="name" name="name" type="text"></label>
+            <label for="country">Страна <input id="country" name="country" type="text"></label>
+            <label for="genre">Жанр <input id="genre" name="genre" type="text"></label>
+            <label for="director">Режиссер <input id="director" name="director" type="text"></label>
+            <label for="script">Сценарий <input id="script" name="script" type="text"></label>
+            <label for="producer">Продюсер <input id="producer" name="producer" type="text"></label>
+            <label for="operator">Оператор <input id="operator" name="operator" type="text"></label>
+            <label for="composer">Композитор <input id="composer" name="film" type="text"></label>
+            <label for="budget">Бюджет <input id="budget" name="budget" type="text"></label>
+            <label for="income">Сборы мировые <input id="income" name="income" type="text"></label>
+            <label for="rating">Рейтинг возраста <input id="rating" name="rating" type="text"></label>
+            <label for="duration">Длительность <input id="duration" name="duration" type="text"></label>
+            <label for="date">Дата выхода<input id="date" name="date" type="text"></label>
+            <label for="poster">Постер<input id="poster" name="poster" type="file" accept=".png, .jpg, .jpeg"></label>
+            <button onclick="newFilm()" type="button">Добавить</button>
+        </form>
+    </div>
+    <h2 id="entryTitle">Коллекция</h2><hr>
+    <div id="entry">
+        <span id="endOfCards"></span>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{
+    font-family: "Segoe UI","Frutiger","Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+}
+#container{
+    position: absolute;
+    left: 25%;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(194, 211, 216);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.tasks{
+    margin-top: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
