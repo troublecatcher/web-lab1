@@ -9,28 +9,54 @@
 </head>
 <body>
 <div id="container">
-    <div id="form">
-        <form name="filmForm">
-            <label for="name">Название <input id="name" name="name" type="text"></label>
-            <label for="country">Страна <input id="country" name="country" type="text"></label>
-            <label for="genre">Жанр <input id="genre" name="genre" type="text"></label>
-            <label for="director">Режиссер <input id="director" name="director" type="text"></label>
-            <label for="script">Сценарий <input id="script" name="script" type="text"></label>
-            <label for="producer">Продюсер <input id="producer" name="producer" type="text"></label>
-            <label for="operator">Оператор <input id="operator" name="operator" type="text"></label>
-            <label for="composer">Композитор <input id="composer" name="film" type="text"></label>
-            <label for="budget">Бюджет <input id="budget" name="budget" type="text"></label>
-            <label for="income">Сборы мировые <input id="income" name="income" type="text"></label>
-            <label for="rating">Рейтинг возраста <input id="rating" name="rating" type="text"></label>
-            <label for="duration">Длительность <input id="duration" name="duration" type="text"></label>
-            <label for="date">Дата выхода<input id="date" name="date" type="text"></label>
-            <label for="poster">Постер<input id="poster" name="poster" type="file" accept=".png, .jpg, .jpeg"></label>
-            <button onclick="newFilm()" type="button">Добавить</button>
+    <div id="filter">
+        <h3>Фильтрация</h3><input type="button" value="→" onclick="showFilter();" id="showFilterBtn">
+        <form name="filterForm">
+        <div class="filterOption">
+            <label>Дата выхода с </label>
+            <input type="date" name="date1" onchange="filterForm.date2.min = filterForm.date1.value">
+            <label> по </label>
+            <input type="date" name="date2" onchange="filterForm.date1.max = filterForm.date2.value">
+            <input type="checkbox" name="dateCheck">
+        </div>
+        <div class="filterOption">
+            <label>Жанр</label>
+            <select id="genreF"></select>
+            <input type="checkbox" name="genreCheck">
+        </div>
+        <div class="filterOption">
+            <label>Страна </label>
+            <select id="countryF"></select>
+            <input type="checkbox" name="countryCheck">
+        </div>
+        <input type="button" value="Применить" onclick="filtrate()">
         </form>
     </div>
-    <h2 id="entryTitle">Коллекция</h2><hr>
-    <div id="entry">
-        <span id="endOfCards"></span>
+    <div id="cards">
+        <h2 id="entryTitle">Коллекция</h2>
+        <div id="entry">
+            <span id="endOfCards"></span>
+        </div>
+    </div>
+    <button onclick="callForm()" id="callForm">Добавить фильм</button>
+    <div id="form">
+        <form name="filmForm">
+            <label for="Название">Название <input id="name" name="Название" type="text"></label>
+            <label for="Страна">Страна <input id="country" name="Страна" type="text"></label>
+            <label for="Жанр">Жанр <input id="genre" name="Жанр" type="text"></label>
+            <label for="Режиссер">Режиссер <input id="director" name="Режиссер" type="text"></label>
+            <label for="Сценарий">Сценарий <input id="script" name="Сценарий" type="text"></label>
+            <label for="Продюсер">Продюсер <input id="producer" name="Продюсер" type="text"></label>
+            <label for="Оператор">Оператор <input id="operator" name="Оператор" type="text"></label>
+            <label for="Композитор">Композитор <input id="composer" name="Композитор" type="text"></label>
+            <label for="Бюджет">Бюджет <input id="budget" name="Бюджет" type="number" min="0"></label>
+            <label for="Сборы мировые">Сборы мировые <input id="income" name="Сборы мировые" type="number" min="0"></label>
+            <label for="Рейтинг возраста">Рейтинг возраста <input id="rating" name="Рейтинг возраста" type="number" min="0"></label>
+            <label for="Длительность">Длительность <input id="duration" name="Длительность" type="time" step="1"></label>
+            <label for="Дата выхода">Дата выхода<input id="date" name="Дата выхода" type="date"></label>
+            <label for="Постер">Постер<input id="poster" name="Постер" type="file" accept=".png, .jpg, .jpeg"></label>
+            <button onclick="addFilm()" type="button">Добавить</button>
+        </form>
     </div>
 </div>
 <script src="script.js"></script>
